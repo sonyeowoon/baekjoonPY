@@ -16,15 +16,7 @@ for i in range(m, n+1):
 m, n = map(int, input().split())
 l = [i for i in range(m, n+1) if i > 1]
 
-for i in range(2, n+1):
-    l = [i for i in l if (i == l[j] or i % l[j])]
-    for i in range(2, l[j]):
-        if i * i > l[j]:
-            break
-        if l[j] % i == 0:
-            l.remove(l[j])
-            break
-    j += 1
-print(l)
-
-[2,3]
+for i in range(2, int(n ** 0.5) + 1):
+    l = [j for j in l if j == i or j % i]
+for i in l:
+    print(i)
